@@ -9,6 +9,7 @@ new_config ={ "pod_override": k8s.V1Pod(
                 spec=k8s.V1PodSpec(
                     containers=[
                         k8s.V1Container(
+                            name="base",
                             image="apache/airflow:2.1.4"
                         )
                         ]
