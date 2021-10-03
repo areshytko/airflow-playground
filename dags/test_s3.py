@@ -13,7 +13,8 @@ def test_s3():
 
     @task
     def write_to_s3():
-        S3Hook.load_string("Some test data", key="first", bucket_name="test-airflow")
+        hook = S3Hook(aws_conn_id="obs-connection")
+        hook.load_string("Some test data", key="first", bucket_name="test-airflow")
 
     write_to_s3()
 
