@@ -1,3 +1,5 @@
+import datetime
+
 from airflow.decorators import dag, task
 from airflow.providers.amazon.aws.hooks.s3 import S3Hook
 
@@ -6,7 +8,7 @@ default_args = {
 }
 
 
-@dag(default_args=default_args, schedule_interval=None, start_date="2021-09-30", tags=['example'])
+@dag(default_args=default_args, schedule_interval=None, start_date=datetime.datetime(2021, 9, 30), tags=['example'])
 def test_s3():
 
     @task
